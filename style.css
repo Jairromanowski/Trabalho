@@ -1,0 +1,16 @@
+body {
+    overflow: hidden;
+    background-color: burlywood;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(158, 4, 120);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container {
+    margin: 50px;
+    border-radius: 10px;
+    
+
+}
