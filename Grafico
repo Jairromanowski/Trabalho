@@ -1,17 +1,28 @@
+import matplotlib.pyplot as plt
+
 import pandas as pd
 
 df = pd.read_csv("vendas.csv")
 
-print (df.head())
+print(df.head())
 
-df['total_vendas'] = df['Quantidade'] * df['Preço unitário (R$)']
+df['Total_Vendas'] = df['Quantidade'] * df['Preço Unitário (R$)']
 
-media_preco = df['Preço unitário (R$)']. mean()
-total_vendas = df['total_venda'].sum()
-maior_venda = df['total_venda'].max ()
-menor_venda = df['total_venda'].min ()
+media_preço = df['Preço Unitário (R$)'].mean()
+total_vendas = df['Total_Vendas'].sum()
+maior_vendas = df['Total_Vendas'].max()
+menor_vendas = df['Total_Vendas'].min()
 
-print (f"Média dos preços dos produtos: R$ {media_preco: .2f}")
-print (f"total de vendas:R${total_vendas: .2f}")
-print (f"maior valorde venda: R$ {maior_venda: .2f}")
-print (f"maior valorde venda: R$ {menor_venda: .2f}")
+print(f"Média dos preços dos produtos: R$ {media_preço: .2f}")
+print(f"Total de vendas: R$ {total_vendas: .2f}")
+print(f"Maior valor de vendas: R$ {maior_vendas: .2f}")
+print(f"Menor valor de venda: R$ {menor_vendas: .2f}")
+ 
+
+vendas_categoria = df.groupby('Categoria')["Total_Vendas"].sum()
+
+vendas_categoria.plot(kind='bar', color=['blue', 'green', 'red'])
+plt.title('Total de vendas por categoria')
+plt.xlabel('Categoria')
+plt.ylabel('Valor em R$')
+plt.show()
