@@ -1,0 +1,17 @@
+import pandas as pd
+
+df = pd.read_csv("vendas.csv")
+
+print (df.head())
+
+df['total_vendas'] = df['Quantidade'] * df['Preço unitário (R$)']
+
+media_preco = df['Preço unitário (R$)']. mean()
+total_vendas = df['total_venda'].sum()
+maior_venda = df['total_venda'].max ()
+menor_venda = df['total_venda'].min ()
+
+print (f"Média dos preços dos produtos: R$ {media_preco: .2f}")
+print (f"total de vendas:R${total_vendas: .2f}")
+print (f"maior valorde venda: R$ {maior_venda: .2f}")
+print (f"maior valorde venda: R$ {menor_venda: .2f}")
