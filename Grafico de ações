@@ -1,0 +1,21 @@
+import yfinance 
+
+ticker = input()
+
+dados = yf.Ticker(ticker)
+
+dados.history()
+tabula = dados.history("6mo")
+tabula
+
+fechamento = tabula.Close
+fechamento
+
+fechamento.plot()
+
+maxima = fechamento.max()
+minima = fechamento.min()
+actual = fechamento[-1]
+print (maxima)
+print (minima)
+print (actual)
