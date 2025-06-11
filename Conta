@@ -18,3 +18,9 @@ def deposita(self, valor):
 
 def saca(self, valor):
         self.__saldo -= valor
+
+def transfere(self, valor, origem, destino):
+      origem.saca(valor)
+      destino.deposita(valor)
+
+def eh_inadimplente(self, cliente):
